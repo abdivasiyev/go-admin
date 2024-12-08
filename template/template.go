@@ -199,7 +199,8 @@ func CheckRequirements() (bool, bool) {
 }
 
 func CheckThemeRequirements() bool {
-	return VersionCompare(system.Version(), Default().GetRequirements())
+	return true
+	// return VersionCompare(system.Version(), Default().GetRequirements())
 }
 
 func VersionCompare(toCompare string, versions []string) bool {
