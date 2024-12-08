@@ -3,17 +3,17 @@ package datamodel
 import (
 	"fmt"
 
-	"github.com/GoAdminGroup/go-admin/context"
-	"github.com/GoAdminGroup/go-admin/modules/db"
-	form2 "github.com/GoAdminGroup/go-admin/plugins/admin/modules/form"
-	"github.com/GoAdminGroup/go-admin/plugins/admin/modules/table"
-	"github.com/GoAdminGroup/go-admin/template"
-	"github.com/GoAdminGroup/go-admin/template/icon"
-	"github.com/GoAdminGroup/go-admin/template/types"
-	"github.com/GoAdminGroup/go-admin/template/types/action"
-	"github.com/GoAdminGroup/go-admin/template/types/form"
-	selection "github.com/GoAdminGroup/go-admin/template/types/form/select"
-	editType "github.com/GoAdminGroup/go-admin/template/types/table"
+	"github.com/abdivasiyev/go-admin/context"
+	"github.com/abdivasiyev/go-admin/modules/db"
+	form2 "github.com/abdivasiyev/go-admin/plugins/admin/modules/form"
+	"github.com/abdivasiyev/go-admin/plugins/admin/modules/table"
+	"github.com/abdivasiyev/go-admin/template"
+	"github.com/abdivasiyev/go-admin/template/icon"
+	"github.com/abdivasiyev/go-admin/template/types"
+	"github.com/abdivasiyev/go-admin/template/types/action"
+	"github.com/abdivasiyev/go-admin/template/types/form"
+	selection "github.com/abdivasiyev/go-admin/template/types/form/select"
+	editType "github.com/abdivasiyev/go-admin/template/types/table"
 )
 
 // GetUserTable return the model of table user.

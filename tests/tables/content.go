@@ -3,11 +3,11 @@ package tables
 import (
 	"html/template"
 
-	"github.com/GoAdminGroup/go-admin/context"
-	tmpl "github.com/GoAdminGroup/go-admin/template"
-	"github.com/GoAdminGroup/go-admin/template/chartjs"
-	"github.com/GoAdminGroup/go-admin/template/icon"
-	"github.com/GoAdminGroup/go-admin/template/types"
+	"github.com/abdivasiyev/go-admin/context"
+	tmpl "github.com/abdivasiyev/go-admin/template"
+	"github.com/abdivasiyev/go-admin/template/chartjs"
+	"github.com/abdivasiyev/go-admin/template/icon"
+	"github.com/abdivasiyev/go-admin/template/types"
 	"github.com/GoAdminGroup/themes/adminlte/components/chart_legend"
 	"github.com/GoAdminGroup/themes/adminlte/components/description"
 	"github.com/GoAdminGroup/themes/adminlte/components/infobox"
