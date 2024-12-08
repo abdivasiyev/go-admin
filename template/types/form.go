@@ -108,7 +108,9 @@ type (
 	OptionTable struct {
 		Table          string
 		TextField      string
+		TextFieldAs    string
 		ValueField     string
+		ValueFieldAs   string
 		QueryProcessFn OptionTableQueryProcessFn
 		ProcessFn      OptionProcessFn
 	}
@@ -209,9 +211,19 @@ func (f *FormField) setOptionsFromSQL(sql *db.SQL) {
 		queryRes, err := sql.All()
 		if err == nil {
 			for _, item := range queryRes {
+				value, ok := item[f.OptionTable.ValueField]
+				if !ok {
+					value = item[f.OptionTable.ValueFieldAs]
+				}
+
+				text, ok := item[f.OptionTable.TextField]
+				if !ok {
+					text = item[f.OptionTable.TextFieldAs]
+				}
+
 				f.Options = append(f.Options, FieldOption{
-					Value: fmt.Sprintf("%v", item[f.OptionTable.ValueField]),
-					Text:  fmt.Sprintf("%v", item[f.OptionTable.TextField]),
+					Value: fmt.Sprintf("%v", value),
+					Text:  fmt.Sprintf("%v", text),
 				})
 			}
 		}
@@ -845,12 +857,24 @@ func (f *FormPanel) FieldOptionsFromTable(table, textFieldName, valueFieldName s
 	if len(process) > 0 {
 		fn = process[0]
 	}
+
 	f.FieldList[f.curFieldListIndex].OptionTable = OptionTable{
 		Table:          table,
 		TextField:      textFieldName,
 		ValueField:     valueFieldName,
 		QueryProcessFn: fn,
 	}
+
+	asText := strings.Split(textFieldName, " as ")
+	if len(asText) == 2 {
+		f.FieldList[f.curFieldListIndex].OptionTable.TextFieldAs = asText[1]
+	}
+
+	asValue := strings.Split(valueFieldName, " as ")
+	if len(asValue) == 2 {
+		f.FieldList[f.curFieldListIndex].OptionTable.ValueFieldAs = asValue[1]
+	}
+
 	return f
 }
 

@@ -608,6 +608,10 @@ func (sql *SQL) Insert(values dialect.H) (int64, error) {
 }
 
 func (sql *SQL) wrap(field string) string {
+	if field == "order" {
+		return `"` + field + `"`
+	}
+
 	return sql.diver.GetDelimiter() + field + sql.diver.GetDelimiter2()
 }
 
