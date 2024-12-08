@@ -33,17 +33,17 @@ func (db *Postgresql) Name() string {
 
 // GetDelimiter implements the method Connection.GetDelimiter.
 func (db *Postgresql) GetDelimiter() string {
-	return `"`
+	return ``
 }
 
 // GetDelimiter2 implements the method Connection.GetDelimiter2.
 func (db *Postgresql) GetDelimiter2() string {
-	return `"`
+	return ``
 }
 
 // GetDelimiters implements the method Connection.GetDelimiters.
 func (db *Postgresql) GetDelimiters() []string {
-	return []string{`"`, `"`}
+	return []string{``, ``}
 }
 
 // QueryWithConnection implements the method Connection.QueryWithConnection.
